@@ -9,6 +9,8 @@ let CONFIG = {
   intervalMs: 300000
 };
 
+let VERSION = "0.1.0";
+
 function validVoltage(value) {
   return typeof value === "number" && value >= 150 && value <= 300;
 }
@@ -43,7 +45,7 @@ function sendMeasurement() {
     l3_v: em.c_voltage,
     grid_frequency_hz: validFrequency(em.a_freq) ? em.a_freq : null,
     smartmeter_model: CONFIG.smartmeterModel,
-    integration_version: "shelly-0.1.0"
+    integration_version: "shelly-" + VERSION
   };
 
   Shelly.call("HTTP.Request", {
