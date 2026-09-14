@@ -1,6 +1,6 @@
 # API: Messwerte übertragen
 
-Diese Dokumentation beschreibt den öffentlichen Endpunkt für Clients wie Shelly Scripts, Homey und eigene Anwendungen. Admin-Endpunkte gehören nicht zu dieser Schnittstelle.
+Diese Dokumentation beschreibt den öffentlichen Endpunkt für www.ortsnetz-auslastung.de darüber kommunizieren Clients wie Home Assistant, Shelly Scripts, Homey und eigene Anwendungen. 
 
 ## Endpunkt
 

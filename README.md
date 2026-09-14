@@ -1,6 +1,6 @@
 # Ortsnetz-Auslastung für Shelly Pro 3EM
 
-Ein bewusst schlankes Shelly-Script, das die drei Netzspannungen eines Shelly Pro 3EM oder Pro 3EM-400 direkt an die Ortsnetz-Auslastung-API überträgt. Es sendet sofort nach dem Start und danach alle fünf Minuten.
+Ein Shelly-Script, das die drei Netzspannungen eines Shelly Pro 3EM oder Pro 3EM-400 direkt an die Ortsnetz-Auslastung-API überträgt. Es sendet sofort nach dem Start und danach alle fünf Minuten.
 
 Es gibt keine Cloud-Abhängigkeit, keine lokale Datenhaltung und keine Wiederholungslogik: Ist die API einmal nicht erreichbar, erfolgt der nächste Versuch regulär fünf Minuten später.
 
@@ -19,19 +19,19 @@ Der klassische Shelly 3EM (Gen1) kann keine Shelly Scripts ausführen und wird v
 1. Öffne die Weboberfläche des Shelly und wechsle zu **Scripts**.
 2. Erstelle ein neues Script, beispielsweise `ortsnetz-auslastung`.
 3. Kopiere den Inhalt von [`ortsnetz-auslastung.js`](ortsnetz-auslastung.js) in den Editor.
-4. Passe im Block `CONFIG` mindestens `latitude` und `longitude` an. Die API-Adresse kann normalerweise unverändert bleiben.
+4. Passe im Block `CONFIG` mindestens `latitude` und `longitude` an. Die API-Adresse kann normalerweise unverändert bleiben. Details weiter unten > Standortkoordinaten finden
 5. Speichere das Script, starte es und aktiviere **Run on startup**.
 
 ### Standortkoordinaten finden
 
-Öffne [OpenStreetMap](https://www.openstreetmap.org/), suche nach deinem Ort oder deiner Adresse und zoome auf den Messort. Ein Rechtsklick auf den gewünschten Punkt zeigt die Koordinaten; über **Koordinaten anzeigen** lassen sie sich kopieren. Übernimm sie im Dezimalformat in den `CONFIG`-Block, zum Beispiel:
+Öffne [OpenStreetMap](https://www.openstreetmap.org/), suche nach deinem Ort oder deiner Adresse und zoome auf den Messort. Ein Rechtsklick auf den gewünschten Punkt zeigt die Koordinaten; über **Adresse anzeigen** > **Intern** lassen sie sich kopieren. Übernimm sie im Dezimalformat in den `CONFIG`-Block, zum Beispiel:
 
 ```javascript
-latitude: 52.520008,
-longitude: 13.404954,
+latitude: 52.510607,
+longitude: 13.389853,
 ```
 
-In Deutschland sind beide Werte positiv. `latitude` steht immer zuerst für Nord/Süd, `longitude` danach für Ost/West. Verwende bei Bedarf einen leicht versetzten Punkt, wenn du den exakten Standort nicht übertragen möchtest.
+Verwende bei Bedarf einen leicht versetzten Punkt, wenn du den exakten Standort nicht übertragen möchtest. Der Ort und die Straße sollen stimmen. 
 
 ## Übertragene Messwerte
 
@@ -52,7 +52,7 @@ Nach dem Start sollte die Shelly-Konsole keine Fehlermeldung ausgeben. Ein Messp
 
 ## Datenschutz
 
-Übertragen werden Zeitstempel, Koordinaten, L1/L2/L3-Spannung, Netzfrequenz, Smartmeter-Modell und Script-Version. Die öffentliche Karte zeigt Koordinaten nur gerastert mit etwa 100 Metern Genauigkeit.
+Übertragen werden Zeitstempel, Koordinaten, L1/L2/L3-Spannung, Netzfrequenz, Smartmeter-Modell und Script-Version. Die Karte zeigt Koordinaten nur gerastert mit etwa 100 Metern Genauigkeit.
 
 ## Quellen
 
