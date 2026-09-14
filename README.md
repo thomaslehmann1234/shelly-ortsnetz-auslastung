@@ -22,6 +22,19 @@ Der klassische Shelly 3EM (Gen1) kann keine Shelly Scripts ausführen und wird v
 4. Passe im Block `CONFIG` mindestens `latitude` und `longitude` an. Die API-Adresse kann normalerweise unverändert bleiben.
 5. Speichere das Script, starte es und aktiviere **Run on startup**.
 
+### Standortkoordinaten finden
+
+Öffne [OpenStreetMap](https://www.openstreetmap.org/), suche nach deinem Ort oder deiner Adresse und zoome auf den Messort. Ein Rechtsklick auf den gewünschten Punkt zeigt die Koordinaten; über **Koordinaten anzeigen** lassen sie sich kopieren. Übernimm sie im Dezimalformat in den `CONFIG`-Block, zum Beispiel:
+
+```javascript
+latitude: 52.520008,
+longitude: 13.404954,
+```
+
+In Deutschland sind beide Werte positiv. `latitude` steht immer zuerst für Nord/Süd, `longitude` danach für Ost/West. Verwende bei Bedarf einen leicht versetzten Punkt, wenn du den exakten Standort nicht übertragen möchtest.
+
+## Übertragene Messwerte
+
 Das Script liest `em:0` aus:
 
 | Ortsnetz-Wert | Shelly-Pro-3EM-Wert |
